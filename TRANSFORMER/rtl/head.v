@@ -1,10 +1,10 @@
 // +FHDR----------------------------------------------------------------------------
 // Project Name  : TRANSFORMER
 // Author        : MuChen
-// Email         : yqs_ahut@163.com
-// Website       : QQ:3221153405
+// Email         : muchen_fpga@qq.com
+// Website       : QQ:2300930602
 // Created On    : 2024/03/31 17:06
-// Last Modified : 2024/06/26 08:42
+// Last Modified : 2024/12/23 22:41
 // File Name     : head.v
 // Description   :
 //         
@@ -323,12 +323,12 @@ module HEAD#(
 					chn0_rmat_lock <= {{(8*DATA_WIDTH){1'b0}},wq};
 				end
 				else if(chn0_wr_en&~chn0_full&chn0_rmat_bit_map_lock[0])begin
-					chn0_rmat_lock <= {{(8*DATA_WIDTH){1'b0}},chn0_rmat_lock[DATA_WIDTH],chn0_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
+					chn0_rmat_lock <= {{(8*DATA_WIDTH){1'b0}},chn0_rmat_lock[DATA_WIDTH-1:0],chn0_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
 				end
 			end
 			WAIT_QK_DLY:begin
 				if(chn0_wr_en&~chn0_full&chn0_rmat_bit_map_lock[0])begin
-					chn0_rmat_lock <= {{(8*DATA_WIDTH){1'b0}},chn0_rmat_lock[DATA_WIDTH],chn0_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
+					chn0_rmat_lock <= {{(8*DATA_WIDTH){1'b0}},chn0_rmat_lock[DATA_WIDTH-1:0],chn0_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
 				end
 			end
 			CAL_S:begin
@@ -444,12 +444,12 @@ module HEAD#(
 					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},wk};
 				end
 				else if(chn1_wr_en&~chn1_full&chn1_rmat_bit_map_lock[0])begin
-					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},chn1_rmat_lock[DATA_WIDTH],chn1_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
+					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},chn1_rmat_lock[DATA_WIDTH-1:0],chn1_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
 				end
 			end
 			CAL_S,WAIT_AV_DONE:begin
 				if(chn1_wr_en&~chn1_full&chn1_rmat_bit_map_lock[0])begin
-					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},chn1_rmat_lock[DATA_WIDTH],chn1_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
+					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},chn1_rmat_lock[DATA_WIDTH-1:0],chn1_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
 				end
 			end
             CAL_V:begin
@@ -457,7 +457,7 @@ module HEAD#(
 					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},wv};
 				end
 				else if(chn1_wr_en&~chn1_full&chn1_rmat_bit_map_lock[0])begin
-					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},chn1_rmat_lock[DATA_WIDTH],chn1_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
+					chn1_rmat_lock <= {{8*DATA_WIDTH{1'b0}},chn1_rmat_lock[DATA_WIDTH-1:0],chn1_rmat_lock[8*DATA_WIDTH-1:DATA_WIDTH]};
 				end
             end
             ATTENTION:begin

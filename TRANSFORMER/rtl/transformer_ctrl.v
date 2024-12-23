@@ -1,10 +1,10 @@
 // +FHDR----------------------------------------------------------------------------
 // Project Name  : TRANSFORMER
 // Author        : MuChen
-// Email         : yqs_ahut@163.com
-// Website       : QQ:3221153405
+// Email         : muchen_fpga@qq.com
+// Website       : QQ:2300930602
 // Created On    : 2024/03/31 17:02
-// Last Modified : 2024/04/14 10:01
+// Last Modified : 2024/12/10 18:26
 // File Name     : transformer_ctrl.v
 // Description   :
 //         
@@ -38,12 +38,12 @@ module TRANSFORMER_CTRL#(
     input               rst_n        , 
     
     //Channel0
-    input               chn0_lmat_ok , 
-    output reg          chn0_lmat_cs , 
-    output              chn0_lmat_ren, 
-    input               chn0_rmat_ok , 
-    output reg          chn0_rmat_cs ,
-    output              chn0_rmat_ren, 
+    input               chn0_lmat_ok ,//left side matrix of channel 0 is ready;
+    output reg          chn0_lmat_cs ,//sram of saving left-side matrix is selected;
+    output              chn0_lmat_ren,//read enable,0: read disble 1:read enable
+    input               chn0_rmat_ok , //right side matrix of channel 0 is ready;
+    output reg          chn0_rmat_cs , //sram of saving right-side matrix is selected;
+    output              chn0_rmat_ren, //read enable,0: read disble 1:read enable
     input               chn0_up_en   ,
 	input               chn0_mat_row_real_ok,
 	input               chn0_mat_real_ok,

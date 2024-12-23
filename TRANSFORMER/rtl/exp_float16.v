@@ -1,10 +1,10 @@
 // +FHDR----------------------------------------------------------------------------
 // Project Name  : IC_Design
 // Author        : MuChen
-// Email         : yqs_ahut@163.com
-// Website       : QQ:3221153405
+// Email         : muchen_fpga@qq.com
+// Website       : QQ:2300930602
 // Created On    : 2024/04/14 08:05
-// Last Modified : 2024/04/14 09:44
+// Last Modified : 2024/12/23 23:06
 // File Name     : exp_float16.v
 // Description   :
 // y = 1+x/1+(x**2)/2!+(x**3)/3!+(x**4)/4!+(x**5)/5!        
@@ -26,11 +26,11 @@ module EXP_FLOAT16#(
 	output					out_vld , 
 	output [DATA_WIDTH-1:0] exp
 );
-    parameter ONE   = 16'h3c00;
-    parameter FACT2 = 16'b0_10000_0000000000;
-    parameter FACT3 = 16'b0_10000_1000000000;
-    parameter FACT4 = 16'b0_10011_1000000000;
-    parameter FACT5 = 16'b0_10110_1110000000;
+    parameter ONE   = 16'h3c00;//1/1
+    parameter FACT2 = 16'b0_01110_0000000000;// 1/2!
+    parameter FACT3 = 16'b0_01100_0101010101;// 1/3!
+    parameter FACT4 = 16'b0_01010_0101010101;// 1/4!
+    parameter FACT5 = 16'b0_01000_0001000100;// 1/5!
 
     /*autodef*/
     //Start of automatic define

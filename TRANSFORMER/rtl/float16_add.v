@@ -2,7 +2,7 @@
     # File Name: float16_add.v
     # Author: MuChen
     # Mail: yqs_ahut@163.com
-    # QQ: 3221153405
+    # QQ: 2300930602
     # Created Time: 2024年03月05日 星期二 22时07分17秒
 *************************************************************************/
 module FLOAT16_ADD(

@@ -1,8 +1,8 @@
 // +FHDR----------------------------------------------------------------------------
 // Project Name  : TRANSFORMER
 // Author        : MuChen
-// Email         : yqs_ahut@163.com
-// Website       : QQ:3221153405
+// Email         : muchen_fpga@qq.com
+// Website       : QQ:2300930602
 // Created On    : 2024/03/31 17:07
 // Last Modified : 2024/03/31 18:36
 // File Name     : sync_fifo.v

@@ -1,8 +1,8 @@
 // +FHDR----------------------------------------------------------------------------
 // Project Name  : IC_Design
 // Author        : MuChen
-// Email         : yqs_ahut@163.com
-// Website       : QQ:3221153405
+// Email         : muchen_fpga@qq.com
+// Website       : QQ:2300930602
 // Created On    : 2024/04/14 11:34
 // Last Modified : 2024/04/15 21:41
 // File Name     : float16_mul.v
